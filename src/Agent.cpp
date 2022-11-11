@@ -18,4 +18,6 @@ int Agent::getPartyId() const
 void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
+    // choose party to join by selection policy
+
 }
