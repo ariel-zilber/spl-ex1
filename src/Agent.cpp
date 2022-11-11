@@ -23,9 +23,12 @@ void Agent::step(Simulation &sim)
      Graph& graph=sim.getGraph();
     Party& party=graph.getParty(mPartyId);
     const State& partyState=party.getState();
-    for(int i=0;i<graph.getNumVertices();i++){
+    int bestPartyToOfferId=-1;
+     for(int i=0;i<graph.getNumVertices();i++){
         const int weight=graph.getEdgeWeight(mPartyId,i);
         if(weight>0&&partyState==State::Waiting){
+            mSelectionPolicy
+            this->mSelectionPolicy()
             // waiting-> collecting
             party.setState(State::CollectingOffers);
             // todo: send id of coalition
@@ -33,6 +36,7 @@ void Agent::step(Simulation &sim)
         }
         // TODO:: handle third case!!
         if(weight>0&&partyState==State::CollectingOffers){
+
             // todo
         }
     }

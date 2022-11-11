@@ -1,6 +1,7 @@
 #include "Party.h"
 
-Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting),mTimer(0)
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting),mTimer(0),mCoalition(
+        nullptr)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
@@ -46,4 +47,8 @@ void Party::step(Simulation &s)
     }
     // CollectingOffers
     // Joined
+}
+
+void Party::setCoalition(Coalition *coalition) {
+    mCoalition=coalition;
 }

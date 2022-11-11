@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Coalition.h"
 
 using std::string;
 
@@ -25,7 +26,7 @@ public:
 //    void hasJoined();
 //    receiveRequest(const Agent & agent);
     const string &getName() const;
-
+    void setCoalition(Coalition * coalition);
 private:
     int mId;
     string mName;
@@ -33,4 +34,6 @@ private:
     JoinPolicy *mJoinPolicy;
     State mState;
     int mTimer;
+    Coalition *mCoalition;
+
 };
