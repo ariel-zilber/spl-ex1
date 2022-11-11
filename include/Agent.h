@@ -13,7 +13,6 @@ public:
     int getPartyId() const;
     int getId() const;
     void step(Simulation &);
-
 private:
     int mAgentId;
     int mPartyId;

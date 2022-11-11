@@ -15,7 +15,7 @@ public:
 
     void step();
     bool shouldTerminate() const;
-
+      Graph &getGraph()  ;
     const Graph &getGraph() const;
     const vector<Agent> &getAgents() const;
     const Party &getParty(int partyId) const;

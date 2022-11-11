@@ -22,6 +22,8 @@ public:
     void setState(State state);
     int getMandates() const;
     void step(Simulation &s);
+//    void hasJoined();
+//    receiveRequest(const Agent & agent);
     const string &getName() const;
 
 private:
@@ -30,4 +32,5 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
+    int mTimer;
 };

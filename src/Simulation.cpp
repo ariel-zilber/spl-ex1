@@ -9,10 +9,18 @@ void Simulation::step()
 {
     // TODO: implement this method
     // step agents:
+    for(int i=0;i<mAgents.size();i++){
+        mAgents[i].step(*this);
+    }
+
     // for each agent
     // do step
     // step parties:
     // for every parry
+    for(int i=0;i<mGraph.getNumVertices();i++){
+        Party  party=  mGraph.getParty(i);
+       party.step(*this);
+    }
     // do step
 }
 
@@ -26,7 +34,10 @@ const Graph &Simulation::getGraph() const
 {
     return mGraph;
 }
-
+ Graph &Simulation::getGraph()
+{
+    return mGraph;
+}
 const vector<Agent> &Simulation::getAgents() const
 {
     return mAgents;
