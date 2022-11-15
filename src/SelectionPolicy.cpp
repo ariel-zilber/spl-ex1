@@ -22,3 +22,13 @@ int MandatesSelectionPolicy::select(const Simulation &sim, const Agent &agent, c
         return partyId1;
     } else { return partyId2; }
 }
+
+
+
+SelectionPolicy* EdgeWeightSelectionPolicy::clone(){
+    return new EdgeWeightSelectionPolicy();
+}
+
+SelectionPolicy* MandatesSelectionPolicy::clone(){
+    return new MandatesSelectionPolicy();
+}

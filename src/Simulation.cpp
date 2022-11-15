@@ -49,6 +49,12 @@ const vector<Agent> &Simulation::getAgents() const
     return mAgents;
 }
 
+//
+vector<Agent> &Simulation::getAgents() 
+{
+    return mAgents;
+}
+
 const Party &Simulation::getParty(int partyId) const
 {
     return mGraph.getParty(partyId);

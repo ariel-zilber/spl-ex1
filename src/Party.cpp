@@ -1,5 +1,6 @@
 #include "Party.h"
-
+#include "JoinPolicy.h"
+#include "Simulation.h"
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting),mTimer(0),mCoalition(
         nullptr),mAgentsOffersIds()
 {
@@ -45,12 +46,23 @@ void Party::step(Simulation &s)
 
             // change state to joined
             if(mTimer==3){
+                
                 // choose the best offer
-                const bestOfferId=mJoinPolicy.join(s,mAgentsOffersIds);;
+                const int bestOfferId=mJoinPolicy->join(s,mAgentsOffersIds);
+                const int numberOfAgents=s.getAgents().size();
+                 Coalition * coalition=s.getCoalitions()[bestOfferId];
+
                 // clone agent
+                Agent & agent =s.getAgents()[bestOfferId];
+                Agent *agentClonePtr=agent.clone();
+                const int  mAgentId=numberOfAgents+1;
+                agentClonePtr->setId(mAgentId);
 
                 // join coalition
-
+                mCoalition=coalition;
+                
+                s.addAgent(agentClonePtr);
+                
                 //
                 setState(State::Waiting);
 
