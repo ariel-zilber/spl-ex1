@@ -26,23 +26,35 @@ const string & Party::getName() const
     return mName;
 }
 
+//
 void Party::step(Simulation &s)
 {
     // TODO: implement this method
     // Waiting
     switch (mState) {
+        // do nothing
+        case State::Waiting:
+            break;
+
+        // do nothing
+        case State::Joined:
+            break;
         case State::CollectingOffers:
 
             mTimer+=1;
 
             // change state to joined
             if(mTimer==3){
+                // choose the best offer
+                const bestOfferId=mJoinPolicy.join(s,mAgentsOffersIds);;
+                // clone agent
+
+                // join coalition
+
+                //
+                setState(State::Waiting);
 
             }
-            break;
-        case State::Waiting:
-            break;
-        case State::Joined:
             break;
     }
     // CollectingOffers
@@ -73,3 +85,6 @@ void Party::addOffer(Agent &agent, int coalitionID) {
 
 
 }
+
+
+
