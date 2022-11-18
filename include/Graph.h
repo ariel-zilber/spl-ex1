@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Party.h"
+class Party;
 
 using std::vector;
 

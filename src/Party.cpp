@@ -2,7 +2,7 @@
 #include "JoinPolicy.h"
 #include "Simulation.h"
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting),mTimer(0),mCoalition(
-        nullptr),mAgentsOffersIds()
+        nullptr),mAgentsOffersIds(),mCoalitionOptions()
 {
     // You can change the implementation of the constructor, but not the signature!
 }
@@ -60,8 +60,8 @@ void Party::step(Simulation &s)
 
                 // join coalition
                 mCoalition=coalition;
-                
-                s.addAgent(agentClonePtr);
+
+                s.getAgents().push_back(*agentClonePtr);
                 
                 //
                 setState(State::Waiting);
@@ -82,7 +82,7 @@ bool Party::canOffer(int coalitionID) {
     return (it==mCoalitionOptions.end());
 }
 
-Coalition *Party::getCoalition() const {
+Coalition *Party::getCoalition()  {
     return mCoalition;
 }
 

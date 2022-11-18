@@ -8,6 +8,8 @@
 using std::string;
 class JoinPolicy;
 class Simulation;
+class Coalition;
+class Agent;
 
 enum State
 {
@@ -25,13 +27,11 @@ public:
     void setState(State state);
     int getMandates() const;
     void step(Simulation &s);
-//    void hasJoined();
-//    receiveRequest(const Agent & agent);
     const string &getName() const;
     void setCoalition(Coalition * coalition);
     bool canOffer(int coalitionID);
     void addOffer(Agent &agent,int coalitionID);
-    Coalition * getCoalition() const ;
+    Coalition * getCoalition()  ;
 private:
     int mId;
     string mName;

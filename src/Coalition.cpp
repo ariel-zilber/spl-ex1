@@ -1,9 +1,5 @@
-//
-// Created by ariel on 11/11/22.
-//
-
-#include "../include/Coalition.h"
-Coalition::Coalition(int id):mTotalMandates(0),partiesIds(),mId(id) {
+#include "Coalition.h"
+Coalition::Coalition(int id):mTotalMandates(0),mId(id),partiesIds() {
 
 }
 

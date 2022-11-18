@@ -1,5 +1,4 @@
-#include "../include/Simulation.h"
-#include "../include/SelectionPolicy.h"
+#include "SelectionPolicy.h"
 
 
 int  EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {

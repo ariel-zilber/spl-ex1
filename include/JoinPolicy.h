@@ -3,6 +3,7 @@
 class JoinPolicy {
     public:
     virtual int join(Simulation &sim,std::vector<int> agentIdVector) =0;
+    virtual ~JoinPolicy(){};  
 
 };
 

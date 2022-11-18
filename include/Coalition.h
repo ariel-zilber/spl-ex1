@@ -1,9 +1,10 @@
 //
 // Created by ariel on 11/11/22.
 //
+#pragma once
 
-#ifndef SKELETONFILES_2_COALITION_H
-#define SKELETONFILES_2_COALITION_H
+#include <vector>
+ 
 using std::vector;
 
 
@@ -22,6 +23,3 @@ private:
     int mId;
     std::vector<int> partiesIds;
 };
-
-
-#endif //SKELETONFILES_2_COALITION_H

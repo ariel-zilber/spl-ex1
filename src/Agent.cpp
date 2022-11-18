@@ -58,7 +58,7 @@ void Agent::step(Simulation &sim)
     // choose party to offer when possible
     if(bestPartyToOfferId!=-1){
         Party& bestParty=graph.getParty(bestPartyToOfferId);
-        bestParty.addOffer(this);
+        bestParty.addOffer(*this,coalitionID);
     }
 
 

@@ -1,9 +1,9 @@
 #include "Simulation.h"
 #include "Coalition.h"
-Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
+Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) ,mCoalitions()
 {
-    // You can change the implementation of the constructor, but not the signature!
-    for(int agentID=0;agentID<mAgents.size();agentID++){
+    const unsigned int numberOfAgents=mAgents.size();
+    for(unsigned int agentID=0;agentID<numberOfAgents;agentID++){
         const int partyId=mAgents[agentID].getPartyId();
         Coalition *c=new Coalition(agentID);
         mGraph.getParty(partyId).setCoalition(c);
@@ -15,19 +15,14 @@ void Simulation::step()
 {
     // TODO: implement this method
     // step agents:
-    for(int i=0;i<mAgents.size();i++){
-        mAgents[i].step(*this);
+    for(auto & mAgent : mAgents){
+        mAgent.step(*this);
     }
 
-    // for each agent
-    // do step
-    // step parties:
-    // for every parry
     for(int i=0;i<mGraph.getNumVertices();i++){
         Party  party=  mGraph.getParty(i);
        party.step(*this);
     }
-    // do step
 }
 
 bool Simulation::shouldTerminate() const
@@ -60,6 +55,10 @@ const Party &Simulation::getParty(int partyId) const
     return mGraph.getParty(partyId);
 }
 
+  Party &Simulation::getParty(int partyId)
+{
+    return mGraph.getParty(partyId);
+}
 vector<Coalition *>  Simulation::getCoalitions() {
     return mCoalitions;
 }
@@ -69,7 +68,8 @@ vector<Coalition *>  Simulation::getCoalitions() {
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     vector<vector<int>> partiesByCoalitions;
-    for(int i=0;i<mCoalitions.size();i++){
+    const unsigned int numberOfCoalitions=mCoalitions.size();
+    for(unsigned int i=0;i<numberOfCoalitions;i++){
         partiesByCoalitions.push_back(mCoalitions[i]->getPartiesIds());
     }
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
