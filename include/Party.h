@@ -21,7 +21,12 @@ enum State
 class Party
 {
 public:
-    Party(int id, string name, int mandates, JoinPolicy *); 
+    Party(int id, string name, int mandates, JoinPolicy *);
+    Party(const Party& party);
+    Party( Party&& party);
+    Party& operator=(const Party& party);
+    Party& operator=(Party&& party)  ;
+    ~Party();
 
     State getState() const;
     void setState(State state);

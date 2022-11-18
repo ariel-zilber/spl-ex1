@@ -3,10 +3,10 @@
 #include "Coalition.h"
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) ,mCoalitions()
 {
-    const unsigned int numberOfAgents=mAgents.size();
-    for(unsigned int agentID=0;agentID<numberOfAgents;agentID++){
+    const  int numberOfAgents=mAgents.size();
+    for( int agentID=0;agentID<numberOfAgents;agentID++){
         const int partyId=mAgents[agentID].getPartyId();
-        Coalition *c=new Coalition(agentID);
+        auto *c=new Coalition(agentID);
         mGraph.getParty(partyId).setCoalition(c);
         const int numMandates=mGraph.getParty(partyId).getMandates();
         c->setTotalMandates(numMandates);
@@ -43,7 +43,7 @@ bool Simulation::shouldTerminate() const
 
     // all joined check
     for(int i=0;i<mGraph.getNumVertices();i++){
-        Party  party=  mGraph.getParty(i);
+        const Party  &party=  mGraph.getParty(i);
         if (party.getState()!=State::Joined){
             allJoined= false;
         };
@@ -91,7 +91,7 @@ vector<Coalition *>  Simulation::getCoalitions() {
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 {
     vector<vector<int>> partiesByCoalitions(mCoalitions.size());
-    for(auto agent:mAgents){
+    for(const auto& agent:mAgents){
         const Party &party=mGraph.getParty(agent.getPartyId());
         const int coalitionsId=party.getCoalition()->getId();
         partiesByCoalitions[coalitionsId].push_back(agent.getPartyId());
@@ -99,4 +99,11 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
 
     // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return partiesByCoalitions;
+}
+
+Simulation::~Simulation() {
+    for(auto it:mCoalitions){
+        delete it;
+    }
+
 }

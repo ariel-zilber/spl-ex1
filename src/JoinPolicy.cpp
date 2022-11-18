@@ -1,5 +1,7 @@
 #include "JoinPolicy.h"
 #include "Simulation.h"
+#include "JoinPolicy.h"
+
 #include <iostream>
 
 int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
@@ -25,4 +27,12 @@ int LastOfferJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVecto
 
     }
     return coalitionIdVector.back();
+}
+
+JoinPolicy *MandatesJoinPolicy::clone() {
+    return new MandatesJoinPolicy();
+}
+
+JoinPolicy *LastOfferJoinPolicy::clone() {
+    return new LastOfferJoinPolicy();
 }

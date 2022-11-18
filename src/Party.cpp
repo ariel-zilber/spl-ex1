@@ -1,13 +1,76 @@
 #include <iostream>
 #include "Party.h"
 #include "JoinPolicy.h"
+#include "SelectionPolicy.h"
 #include "Simulation.h"
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting),mTimer(0),mCoalition(
         nullptr),mAgentsOffersIds(),mCoalitionOptions()
 {
-    // You can change the implementation of the constructor, but not the signature!
+    std::cout<<"[DEBUG]"<<"cntr: Party()(id:"<<mId<<",state:"<<mState<<",mTimer:"<<mTimer<<")"<<std::endl;
+
 }
 
+Party::Party(const Party &party)  : mId(party.mId), mName(party.mName), mMandates(party.mMandates), mState(party.mState),mTimer(party.mTimer),mCoalition(
+        nullptr),mAgentsOffersIds(),mCoalitionOptions(){
+    mJoinPolicy=party.mJoinPolicy->clone();
+}
+
+Party::Party(Party &&party): mId(party.mId), mName(party.mName), mMandates(party.mMandates), mState(party.mState),mTimer(party.mTimer),mCoalition(
+        party.mCoalition),mAgentsOffersIds(),mCoalitionOptions(){
+    // swap
+    mJoinPolicy=party.mJoinPolicy;
+    party.mJoinPolicy= nullptr;
+}
+
+Party &Party::operator=(const Party &party) {
+
+    if(&party!= this){
+
+        mId=party.mId;
+        mName=party.mName;
+        mMandates=party.mMandates;
+        //
+        mJoinPolicy=party.mJoinPolicy->clone();
+        mState=party.mState;
+        mTimer=party.mTimer;
+        mCoalition=party.mCoalition;
+        mAgentsOffersIds=party.mAgentsOffersIds;
+        mCoalitionOptions=party.mCoalitionOptions;
+    }
+    return *this;
+}
+
+Party &Party::operator=(Party &&party) {
+
+
+    if(&party!= this){
+
+        mId=party.mId;
+        mName=party.mName;
+        mMandates=party.mMandates;
+        mState=party.mState;
+        mTimer=party.mTimer;
+        mCoalition=party.mCoalition;
+        mAgentsOffersIds=party.mAgentsOffersIds;
+        mCoalitionOptions=party.mCoalitionOptions;
+
+        mJoinPolicy=party.mJoinPolicy;
+        party.mJoinPolicy= nullptr;
+
+    }
+    return *this;
+}
+
+
+Party::~Party()
+{
+    std::cout<<"[DEBUG]"<<"~Party()(id:"<<mId<<",state:"<<mState<<",mTimer:"<<mTimer<<")"<<std::endl;
+
+    if(mJoinPolicy!= nullptr){
+        delete mJoinPolicy;
+        mJoinPolicy=nullptr;
+    }
+}
 State Party::getState() const
 {
     return mState;
@@ -57,27 +120,23 @@ void Party::step(Simulation &s)
 
                 // clone agent
                 Agent & agent =s.getAgents()[bestOfferId];
-                Agent *agentClonePtr=agent.clone();
-                std::cout<<"[DEBUG]"<<"Party::step():Cloning done !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
+                Agent agentClone=Agent(numberOfAgents,mId,agent.getSelectionPolicy()->clone());
 
-                agentClonePtr->setId(numberOfAgents);
-                agentClonePtr->setPartyId(mId);
+                std::cout<<"[DEBUG]"<<"Party::step():Cloning done !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
                 std::cout<<"[DEBUG]"<<"Party::step():Cloning update id&&party ID !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
 
                 // join coalition
                 mCoalition=coalition;
                 std::cout<<"[DEBUG]"<<"Party::step():Cloning  set coaliotn !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
                 std::cout<<"[DEBUG]"<<"Party::step():Cloning  mCoalition->getTotalMandates():"<<mCoalition->getTotalMandates()<<" !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
-
                 mCoalition->setTotalMandates(mCoalition->getTotalMandates()+mMandates);
                 std::cout<<"[DEBUG]"<<"Party::step():Cloning  add agent !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
 
-                s.getAgents().push_back(*agentClonePtr);
+                s.getAgents().push_back(std::move(agentClone));
                 std::cout<<"[DEBUG]"<<"Party::step() set state (Collecting-> Joined) !!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
                 setState(State::Joined);
                 std::cout<<"[DEBUG]"<<"Party::step()(id"<<mId<<",mCoalition:"<<mCoalition->getId()<<")"<<std::endl;
-                agentClonePtr->step(s);
-
+                s.getAgents().back().step(s);
 
             }
             mTimer+=1;
@@ -120,6 +179,5 @@ void Party::addOffer(Agent &agent, int coalitionID) {
 
 
 }
-
 
 

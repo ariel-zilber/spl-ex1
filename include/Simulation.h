@@ -12,7 +12,7 @@ class Simulation
 {
 public:
     Simulation(Graph g, vector<Agent> agents);
-
+    ~Simulation();
     void step();
     bool shouldTerminate() const;
       Graph &getGraph()  ;

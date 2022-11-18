@@ -9,12 +9,15 @@ class Agent
 {
 public:
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy);
-    Agent * clone();
+    Agent(const Agent& agent);
+    Agent( Agent&& agent);
+    Agent& operator=(const Agent& other);
+    Agent& operator=(Agent&& other)  ;
+    ~Agent();
     int getPartyId() const;
     int getId() const;
-    void setId(int value);
-    void setPartyId(int value);
     void step(Simulation &);
+    SelectionPolicy * getSelectionPolicy();
 
 private:
     int mAgentId;

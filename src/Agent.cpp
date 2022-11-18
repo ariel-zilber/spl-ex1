@@ -9,19 +9,52 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgen
     // You can change the implementation of the constructor, but not the signature!
 }
 
+Agent::Agent(const Agent &agent): mAgentId(agent.mAgentId), mPartyId(agent.mPartyId), mSelectionPolicy(agent.mSelectionPolicy->clone()){
+    std::cout<<"[DEBUG]"<<"Agent(Agent &agent)"<<std::endl;
 
-Agent* Agent::clone(){
-    return new Agent(mAgentId,mPartyId,mSelectionPolicy->clone());
-}
-void  Agent::setId(int value) 
-{
-    mAgentId=value;
 }
 
-void  Agent::setPartyId(int value)
-{
-    mPartyId=value;
+Agent::Agent(Agent &&agent): mAgentId(agent.mAgentId), mPartyId(agent.mPartyId){
+    std::cout<<"[DEBUG]"<<"Agent(Agent &&agent)"<<std::endl;
+
+    // swap
+    mSelectionPolicy=agent.mSelectionPolicy;
+    agent.mSelectionPolicy= nullptr;
 }
+
+Agent &Agent::operator=(const Agent &other) {
+    std::cout<<"[DEBUG]"<<"Agent &Agent::operator=(const Agent &other) "<<std::endl;
+
+    if(&other!= this){
+        mAgentId=other.mAgentId;
+        mPartyId=other.mPartyId;
+        mSelectionPolicy=other.mSelectionPolicy->clone();
+    }
+    return *this;
+}
+
+Agent &Agent::operator=(Agent &&other)  {
+    std::cout<<"[DEBUG]"<<"Agent &Agent::operator=( Agent &&other) "<<std::endl;
+
+    if(&other!= this){
+        mAgentId=other.mAgentId;
+        mPartyId=other.mPartyId;
+        mSelectionPolicy=other.mSelectionPolicy;
+        other.mSelectionPolicy= nullptr;
+    }
+    return *this;
+}
+
+
+Agent::~Agent() {
+    std::cout<<"[DEBUG]"<<"~~Agent"<<std::endl;
+
+    if(mSelectionPolicy!= nullptr){
+        delete mSelectionPolicy;
+        mSelectionPolicy= nullptr;
+    }
+}
+
 
 
 
@@ -42,7 +75,7 @@ void Agent::step(Simulation &sim)
      Graph& graph=sim.getGraph();
 
     // agent finds potential neightbor parties
-    int bestPartyToOfferId=-1;
+    int bestPartyToOfferId=mPartyId;
     const int coalitionID=sim.getParty(mPartyId).getCoalition()->getId();
     std::cout<<"[DEBUG]"<<"Agent::step()(id:"<<mAgentId<<",partyID:"<<mPartyId<<",coalitionID:"<<coalitionID<<")"<<std::endl;
 
@@ -72,7 +105,7 @@ void Agent::step(Simulation &sim)
 
 
     // choose party to offer when possible
-    if(bestPartyToOfferId!=-1){
+    if(bestPartyToOfferId!=mPartyId){
         std::cout<<"[DEBUG]"<<"Agent::step() ofering!!!!!! (id:"<<mAgentId<<",bestPartyToOfferId:"<<bestPartyToOfferId<<",coalitionID:"<<coalitionID<<")"<<std::endl;
         Party& bestParty=graph.getParty(bestPartyToOfferId);
         bestParty.addOffer(*this,coalitionID);
@@ -84,3 +117,7 @@ void Agent::step(Simulation &sim)
 
 }
 
+
+SelectionPolicy *Agent::getSelectionPolicy() {
+    return mSelectionPolicy;
+}
