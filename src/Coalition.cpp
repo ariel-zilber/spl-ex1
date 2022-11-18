@@ -20,5 +20,7 @@ int  Coalition::getTotalMandates(){
 };
 
 
-int  Coalition::getId(){return this->mId;};
+int  Coalition::getId() const {
+    return this->mId;
+};
 void  Coalition::setId(int value){this->mId=value;};

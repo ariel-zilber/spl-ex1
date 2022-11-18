@@ -1,8 +1,9 @@
 #pragma once
+#include "Simulation.h"
 
 class JoinPolicy {
     public:
-    virtual int join(Simulation &sim,std::vector<int> agentIdVector) =0;
+    virtual int join(Simulation &sim,std::vector<int> coalitionIdVector) =0;
     virtual ~JoinPolicy(){};  
 
 };
@@ -10,13 +11,13 @@ class JoinPolicy {
 class MandatesJoinPolicy : public JoinPolicy {
     public:
 
-     int join(Simulation &sim,std::vector<int> agentIdVector) override;
+     int join(Simulation &sim,std::vector<int> coalitionIdVector) override;
 
 };
 
 class LastOfferJoinPolicy : public JoinPolicy {
     public:
-    int join(Simulation &sim,std::vector<int> agentIdVector) override;
+    int join(Simulation &sim,std::vector<int> coalitionIdVector) override;
 
 
 };

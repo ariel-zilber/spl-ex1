@@ -32,6 +32,7 @@ public:
     bool canOffer(int coalitionID);
     void addOffer(Agent &agent,int coalitionID);
     Coalition * getCoalition()  ;
+    const Coalition * getCoalition()  const;
 private:
     int mId;
     string mName;

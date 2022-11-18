@@ -1,6 +1,3 @@
-//
-// Created by ariel on 11/11/22.
-//
 #pragma once
 
 #include <vector>
@@ -15,7 +12,7 @@ public:
     const std::vector<int>& getPartiesIds();
     void setTotalMandates(int value);
     int  getTotalMandates();
-    int  getId();
+    int  getId() const ;
     void  setId(int value);
 
 private:

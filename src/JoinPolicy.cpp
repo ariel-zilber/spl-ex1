@@ -1,21 +1,28 @@
-#include "../include/JoinPolicy.h"
-#include "../include/Simulation.h"
+#include "JoinPolicy.h"
+#include "Simulation.h"
+#include <iostream>
 
-int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> agentIdVector) {
-    
-    int maxMandateCount=0;
-    int bestPartyId=0;
-    for(auto currAgentId:agentIdVector){
-     const int currPartyId=sim.getAgents()[currAgentId].getPartyId();
-     const int currCountMandate=sim.getGraph().getMandates(currPartyId);
-     if(currCountMandate>maxMandateCount){
-        maxMandateCount=currCountMandate;
-        bestPartyId=currPartyId;
-     }
+int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
+    std::cout<<"[DEBUG]"<<"MandatesJoinPolicy"<<std::endl;
+    int bestCoalitionId=0;
+    int currMaxMandates=-1;
+    for(auto currId:coalitionIdVector){
+        const int currTotalMandates=sim.getCoalitions()[currId]->getTotalMandates();
+        if(currTotalMandates>currMaxMandates){
+            currMaxMandates=currTotalMandates;
+            bestCoalitionId=currId;
+        }
+        
     }
-    return bestPartyId;
+    return bestCoalitionId;
+
 }
 
-int LastOfferJoinPolicy::join(Simulation &sim, std::vector<int> agentIdVector) {
-    return agentIdVector.back();
+int LastOfferJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
+    std::cout<<"[DEBUG]"<<"LastOfferJoinPolicy"<<std::endl;
+    for(auto i:coalitionIdVector){
+        std::cout<<"[DEBUG]"<<"LastOfferJoinPolicy:"<<i<<std::endl;
+
+    }
+    return coalitionIdVector.back();
 }
