@@ -5,15 +5,15 @@
 #include <iostream>
 
 int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
-    int bestCoalitionId=0;
-    int currMaxMandates=-1;
-    for(auto currId:coalitionIdVector){
-        const int currTotalMandates=sim.getCoalitions()[currId]->getTotalMandates();
-        if(currTotalMandates>currMaxMandates){
-            currMaxMandates=currTotalMandates;
-            bestCoalitionId=currId;
+    int bestCoalitionId = 0;
+    int currMaxMandates = -1;
+    for (auto currId: coalitionIdVector) {
+        const int currTotalMandates = sim.getCoalitions()[currId]->getTotalMandates();
+        if (currTotalMandates > currMaxMandates) {
+            currMaxMandates = currTotalMandates;
+            bestCoalitionId = currId;
         }
-        
+
     }
     return bestCoalitionId;
 

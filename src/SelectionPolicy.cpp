@@ -2,7 +2,8 @@
 #include <iostream>
 
 
-int  EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
+int
+EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
 
     int agentPartyId = agent.getPartyId();
     int weight1 = sim.getGraph().getEdgeWeight(agentPartyId, partyId1);
@@ -26,11 +27,10 @@ int MandatesSelectionPolicy::select(const Simulation &sim, const Agent &agent, c
 }
 
 
-
-SelectionPolicy* EdgeWeightSelectionPolicy::clone(){
+SelectionPolicy *EdgeWeightSelectionPolicy::clone() {
     return new EdgeWeightSelectionPolicy();
 }
 
-SelectionPolicy* MandatesSelectionPolicy::clone(){
+SelectionPolicy *MandatesSelectionPolicy::clone() {
     return new MandatesSelectionPolicy();
 }
