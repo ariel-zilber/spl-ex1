@@ -22,6 +22,7 @@ Agent::Agent(Agent &&agent) : mAgentId(agent.mAgentId), mPartyId(agent.mPartyId)
 
 Agent &Agent::operator=(const Agent &other) {
 
+    // self check
     if (&other != this) {
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
@@ -32,6 +33,7 @@ Agent &Agent::operator=(const Agent &other) {
 
 Agent &Agent::operator=(Agent &&other) {
 
+    // self check
     if (&other != this) {
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
@@ -68,7 +70,7 @@ void Agent::step(Simulation &sim) {
     int bestPartyToOfferId = mPartyId;
     const int coalitionID = sim.getParty(mPartyId).getCoalition()->getId();
 
-    for (int i = 0; i < graph.getNumVertices(); i++) {
+    for (auto i = 0; i < graph.getNumVertices(); i++) {
 
         // condition 1: The party is a neighbor of the party to which the agent belongs.
         const bool isNeighbors = graph.getEdgeWeight(mPartyId, i) > 0;

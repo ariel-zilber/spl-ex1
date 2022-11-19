@@ -1,6 +1,5 @@
 #include "JoinPolicy.h"
 #include "Simulation.h"
-#include "JoinPolicy.h"
 
 #include <iostream>
 

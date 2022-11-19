@@ -5,21 +5,32 @@
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents), mCoalitions() {
     const int numberOfAgents = mAgents.size();
     for (int agentID = 0; agentID < numberOfAgents; agentID++) {
+
+        // initialize a coalition
+        auto *coalition = new Coalition(agentID);
+
+        //  get the party associated with the agent
         const int partyId = mAgents[agentID].getPartyId();
-        auto *c = new Coalition(agentID);
-        mGraph.getParty(partyId).setCoalition(c);
-        const int numMandates = mGraph.getParty(partyId).getMandates();
-        c->setTotalMandates(numMandates);
-        mCoalitions.push_back(c);
+        Party &party=mGraph.getParty(partyId);
+
+        // adds the party to the coalition
+        const int mandatesToAdd=party.getMandates();
+        coalition->addMandates(mandatesToAdd);
+        party.setCoalition(coalition);
+
+        // add the coalition to the simulation
+        mCoalitions.push_back(coalition);
     }
 }
 
 void Simulation::step() {
-    // step agents:
+
+    // Agents  perform step:
     for (auto &mAgent: mAgents) {
         mAgent.step(*this);
     }
 
+    // Parties perform step:
     for (int i = 0; i < mGraph.getNumVertices(); i++) {
         Party &party = mGraph.getParty(i);
         party.step(*this);
@@ -28,23 +39,25 @@ void Simulation::step() {
 
 bool Simulation::shouldTerminate() const {
     bool allJoined = true;
-    bool atleast61Mandates = false;
+    bool atLeast61Mandates = false;
 
-    // majority check
+    // condition 1 check:majority
     for (auto c: mCoalitions) {
         if (c->getTotalMandates() >= 61) {
-            atleast61Mandates = true;
+            atLeast61Mandates = true;
         }
     }
 
-    // all joined check
+    // condition 2 check: all joined
     for (int i = 0; i < mGraph.getNumVertices(); i++) {
         const Party &party = mGraph.getParty(i);
         if (party.getState() != State::Joined) {
             allJoined = false;
         };
     }
-    return allJoined || atleast61Mandates;
+
+    // should satisfy at least one condition
+    return allJoined || atLeast61Mandates;
 }
 
 const Graph &Simulation::getGraph() const {
@@ -76,17 +89,20 @@ vector<Coalition *> Simulation::getCoalitions() {
     return mCoalitions;
 }
 
-/// This method returns a "coalition" vector, where each element is a vector of party IDs in the coalition.
-/// At the simulation initialization - the result will be [[agent0.partyId], [agent1.partyId], ...]
 const vector<vector<int>> Simulation::getPartiesByCoalitions() const {
+
+    // init a return vector of parties seperated by coaltions
     vector<vector<int>> partiesByCoalitions(mCoalitions.size());
+
+    // iterate over all agents and add the agent id to the expected coalation index
+    // The result will be vector [[agent0.partyId], [agent1.partyId], ...]
     for (const auto &agent: mAgents) {
-        const Party &party = mGraph.getParty(agent.getPartyId());
+        const int agentsPartyId=agent.getPartyId();
+        const Party &party = mGraph.getParty(agentsPartyId);
         const int coalitionsId = party.getCoalition()->getId();
         partiesByCoalitions[coalitionsId].push_back(agent.getPartyId());
     }
 
-    // TODO: you MUST implement this method for getting proper output, read the documentation above.
     return partiesByCoalitions;
 }
 
@@ -94,5 +110,4 @@ Simulation::~Simulation() {
     for (auto it: mCoalitions) {
         delete it;
     }
-
 }

@@ -2,8 +2,7 @@
 #include <iostream>
 
 
-int
-EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
+int EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
 
     int agentPartyId = agent.getPartyId();
     int weight1 = sim.getGraph().getEdgeWeight(agentPartyId, partyId1);

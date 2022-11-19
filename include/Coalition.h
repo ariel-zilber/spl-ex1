@@ -22,7 +22,15 @@ public:
      *   @return the total mandates of the coalition
      */
     int  getTotalMandates();
-    void setTotalMandates(int value);
+
+
+
+    /***
+     *  Adds mandates to the coalition
+     */
+    void addMandates(int numOfMandatesToAdd);
+
+
 
     /***
      *   Const getter for the id the coalition
