@@ -32,7 +32,7 @@ public:
      *   Const getter to get edge weight of two parties(nodes)
      *   @param v1
      *   @param v2
-     *   @return edge weigh
+     *   @return edge weight
      */
     int getEdgeWeight(int v1, int v2) const;
 
