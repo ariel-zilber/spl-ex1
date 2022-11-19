@@ -21,14 +21,12 @@ Agent Parser::parseAgent(const json &jAgent, int agentId)
         throw std::invalid_argument("Invalid selection policy");
 
     int partyId = jAgent["party_id"];
-    std::cout<<"[DEBUG]"<<"parseAgent:"<<agentId<<std::endl;
 
     return Agent(agentId, partyId, sp);
 }
 
 Party Parser::parseParty(const json &jParty, const int id)
 {
-    std::cout<<"[DEBUG]"<<"parseParty:"<<id<<std::endl;
 
     JoinPolicy *jp;
     string joinPolicy = jParty["join_policy"];
@@ -45,7 +43,6 @@ Party Parser::parseParty(const json &jParty, const int id)
 
     string name = jParty["name"];
     int mandates = jParty["mandates"];
-    std::cout<<"[DEBUG]"<<"reutrn party:"<<id<<std::endl;
 
     return Party(id, name, mandates, jp);
 }
@@ -87,7 +84,6 @@ Simulation Parser::parseSimulation(const json &jSimulation)
 
     // create parties list
     vector<Party> parties;
-    std::cout<<"[DEBUG]"<<"push party--------------------"<<std::endl;
 
     for (unsigned int i = 0; i < jSimulation["parties"].size(); ++i)
         parties.push_back(parseParty(jSimulation["parties"][i], i));

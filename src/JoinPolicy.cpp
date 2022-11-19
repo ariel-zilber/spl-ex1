@@ -5,7 +5,6 @@
 #include <iostream>
 
 int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
-    std::cout<<"[DEBUG]"<<"MandatesJoinPolicy"<<std::endl;
     int bestCoalitionId=0;
     int currMaxMandates=-1;
     for(auto currId:coalitionIdVector){
@@ -21,11 +20,6 @@ int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector
 }
 
 int LastOfferJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector) {
-    std::cout<<"[DEBUG]"<<"LastOfferJoinPolicy"<<std::endl;
-    for(auto i:coalitionIdVector){
-        std::cout<<"[DEBUG]"<<"LastOfferJoinPolicy:"<<i<<std::endl;
-
-    }
     return coalitionIdVector.back();
 }
 

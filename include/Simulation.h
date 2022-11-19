@@ -8,6 +8,13 @@
 using std::string;
 using std::vector;
 
+/**
+* A general Fractal type represented as a boolean matrix
+*
+* @author - Ariel Zilbershtein
+* @CS login - arikzil
+*
+* */
 class Simulation
 {
 public:

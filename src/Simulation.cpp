@@ -16,8 +16,6 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
 
 void Simulation::step()
 {
-    // TODO: implement this method
-    std::cout<<"[DEBUG]"<<"Simulation::step():( num agents:"<<mAgents.size()<<")"<<std::endl;
     // step agents:
     for(auto & mAgent : mAgents){
         mAgent.step(*this);
@@ -48,9 +46,6 @@ bool Simulation::shouldTerminate() const
             allJoined= false;
         };
     }
-    std::cout<<"[DEBUG]"<<"Simulation::shouldTerminate():( allJoined:"<<allJoined<<"|,atleast61Mandates:"<<atleast61Mandates<<")"<<std::endl;
-
-
     return allJoined||atleast61Mandates;
 }
 
