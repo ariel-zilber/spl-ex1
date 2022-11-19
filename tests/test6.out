@@ -1,0 +1,1124 @@
+[
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 10,
+                "parties": [
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "Waiting"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "Waiting"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "Waiting"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 10,
+                "parties": [
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "Waiting"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "Waiting"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 10,
+                "parties": [
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "Waiting"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "Waiting"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 10,
+                "parties": [
+                    5
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "Waiting"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "Waiting"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            },
+            {
+                "id": 1,
+                "partyId": 0
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 20,
+                "parties": [
+                    5,
+                    0
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            },
+            {
+                "id": 1,
+                "partyId": 0
+            },
+            {
+                "id": 2,
+                "partyId": 1
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 30,
+                "parties": [
+                    5,
+                    0,
+                    1
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "Joined"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    },
+    {
+        "agents": [
+            {
+                "id": 0,
+                "partyId": 5
+            },
+            {
+                "id": 1,
+                "partyId": 0
+            },
+            {
+                "id": 2,
+                "partyId": 1
+            },
+            {
+                "id": 3,
+                "partyId": 2
+            }
+        ],
+        "coalitions": [
+            {
+                "mandates": 70,
+                "parties": [
+                    5,
+                    0,
+                    1,
+                    2
+                ]
+            }
+        ],
+        "edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 0,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 3,
+                "weight": 1
+            },
+            {
+                "from": 5,
+                "to": 4,
+                "weight": 1
+            }
+        ],
+        "parties": [
+            {
+                "id": 0,
+                "mandates": 10,
+                "name": "The Baratheons",
+                "state": "Joined"
+            },
+            {
+                "id": 1,
+                "mandates": 10,
+                "name": "The Targaryens",
+                "state": "Joined"
+            },
+            {
+                "id": 2,
+                "mandates": 40,
+                "name": "The Starks",
+                "state": "Joined"
+            },
+            {
+                "id": 3,
+                "mandates": 30,
+                "name": "The a",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 4,
+                "mandates": 20,
+                "name": "The b",
+                "state": "CollectingOffers"
+            },
+            {
+                "id": 5,
+                "mandates": 10,
+                "name": "The b",
+                "state": "Joined"
+            }
+        ]
+    }
+]

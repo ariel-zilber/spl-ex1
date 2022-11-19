@@ -1,0 +1,42 @@
+{
+  "parties": [
+    {
+      "name": "The Lannisters",
+      "mandates": 70,
+      "join_policy": "L"
+    },
+    {
+      "name": "The Baratheons",
+      "mandates": 30,
+      "join_policy": "L"
+    },
+    {
+      "name": "The Targaryens",
+      "mandates": 10,
+      "join_policy": "L"
+    },
+    {
+      "name": "The Starks",
+      "mandates": 10,
+      "join_policy": "L"
+    }
+  ],
+  "graph": [
+    [0, 1, 2, 3],
+    [1, 0, 4, 5],
+    [2, 4, 0, 6],
+    [3, 5, 6, 0]
+  ],
+  "agents": [
+    {
+      "party_id": 2,
+      "selection_policy": "E"
+    },
+    {
+      "party_id": 3,
+      "selection_policy": "E"
+    }
+
+  ]
+}
+  

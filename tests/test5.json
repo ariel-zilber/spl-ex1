@@ -1,0 +1,50 @@
+{
+  "parties": [
+    {
+      "name": "The Baratheons",
+      "mandates": 10,
+      "join_policy": "M"
+    },
+    {
+      "name": "The Targaryens",
+      "mandates": 10,
+      "join_policy": "M"
+    },
+    {
+      "name": "The Starks",
+      "mandates": 40,
+      "join_policy": "M"
+    },
+    {
+      "name": "The a",
+      "mandates": 30,
+      "join_policy": "M"
+    },
+    {
+      "name": "The b",
+      "mandates": 20,
+      "join_policy": "M"
+    },
+    {
+      "name": "The b",
+      "mandates": 10,
+      "join_policy": "M"
+    }
+  ],
+  "graph": [
+    [0, 1, 0, 0, 1, 1],
+    [1, 0, 1, 0, 0, 1],
+    [0, 1, 0, 1, 0, 1],
+    [0, 0, 1, 0, 1, 1],
+    [1, 0, 0, 1, 0, 1],
+    [1, 1, 1, 1, 1, 0]
+  ],
+  "agents": [
+    {
+      "party_id": 5,
+      "selection_policy": "E"
+    }
+
+  ]
+}
+  
