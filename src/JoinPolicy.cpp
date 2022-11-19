@@ -12,7 +12,6 @@ int MandatesJoinPolicy::join(Simulation &sim, std::vector<int> coalitionIdVector
             currMaxMandates = currTotalMandates;
             bestCoalitionId = currId;
         }
-
     }
     return bestCoalitionId;
 

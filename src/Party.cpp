@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Party.h"
 #include "JoinPolicy.h"
 #include "SelectionPolicy.h"
@@ -157,5 +156,3 @@ void Party::addOffer(Agent &agent, int coalitionID) {
         setState(State::CollectingOffers);
     }
 }
-
-

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Agent.h"
 #include "Simulation.h"
 #include "SelectionPolicy.h"
@@ -66,7 +65,7 @@ void Agent::step(Simulation &sim) {
     // choose party to join by selection policy
     Graph &graph = sim.getGraph();
 
-    // agent finds potential neightbor parties
+    // agent finds potential neighbor parties
     int bestPartyToOfferId = mPartyId;
     const int coalitionID = sim.getParty(mPartyId).getCoalition()->getId();
 

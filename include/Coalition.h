@@ -39,8 +39,8 @@ public:
     int  getId() const ;
 
 private:
-
     // Data members:
+
     int mTotalMandates;
     int mId;
 };

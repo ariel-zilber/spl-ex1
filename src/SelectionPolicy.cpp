@@ -1,6 +1,4 @@
 #include "SelectionPolicy.h"
-#include <iostream>
-
 
 int EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
 
@@ -14,7 +12,6 @@ int EdgeWeightSelectionPolicy::select(const Simulation &sim, const Agent &agent,
     }
 
 };
-
 
 int MandatesSelectionPolicy::select(const Simulation &sim, const Agent &agent, const int partyId1, const int partyId2) {
 

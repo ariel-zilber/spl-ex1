@@ -57,8 +57,6 @@ public:
     const Party &getParty(int partyId) const;
 
 private:
-
-
     // Data members:
 
     vector<Party> mVertices;
