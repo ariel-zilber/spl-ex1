@@ -12,10 +12,9 @@ Agent::Agent(const Agent &agent) : mAgentId(agent.mAgentId), mPartyId(agent.mPar
 
 }
 
-Agent::Agent(Agent &&agent) : mAgentId(agent.mAgentId), mPartyId(agent.mPartyId) {
+Agent::Agent(Agent &&agent) : mAgentId(agent.mAgentId), mPartyId(agent.mPartyId) ,mSelectionPolicy(agent.mSelectionPolicy){
 
     // swap
-    mSelectionPolicy = agent.mSelectionPolicy;
     agent.mSelectionPolicy = nullptr;
 }
 

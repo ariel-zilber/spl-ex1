@@ -9,17 +9,15 @@ Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName
                                                                   mCoalitionOptions() {
 }
 
-Party::Party(const Party &party) : mId(party.mId), mName(party.mName), mMandates(party.mMandates), mState(party.mState),
-                                   mTimer(party.mTimer), mCoalition(nullptr), mAgentsOffersIds(), mCoalitionOptions() {
-    mJoinPolicy = party.mJoinPolicy->clone();
-}
+Party::Party(const Party &party) : mId(party.mId), mName(party.mName), mMandates(party.mMandates),
+                                   mJoinPolicy(party.mJoinPolicy->clone()), mState(party.mState),
+                                   mTimer(party.mTimer), mCoalition(nullptr), mAgentsOffersIds(),
+                                   mCoalitionOptions() {}
 
-Party::Party(Party &&party) : mId(party.mId), mName(party.mName), mMandates(party.mMandates), mState(party.mState),
+Party::Party(Party &&party) : mId(party.mId), mName(party.mName), mMandates(party.mMandates),
+                              mJoinPolicy(party.mJoinPolicy), mState(party.mState),
                               mTimer(party.mTimer), mCoalition(party.mCoalition), mAgentsOffersIds(),
                               mCoalitionOptions() {
-
-    // swap
-    mJoinPolicy = party.mJoinPolicy;
     party.mJoinPolicy = nullptr;
 }
 
