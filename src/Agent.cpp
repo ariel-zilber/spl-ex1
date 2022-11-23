@@ -22,6 +22,7 @@ Agent &Agent::operator=(const Agent &other) {
 
     // self check
     if (&other != this) {
+        delete mSelectionPolicy;
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
         mSelectionPolicy = other.mSelectionPolicy->clone();
@@ -33,6 +34,7 @@ Agent &Agent::operator=(Agent &&other) {
 
     // self check
     if (&other != this) {
+        delete mSelectionPolicy;
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
         mSelectionPolicy = other.mSelectionPolicy;

@@ -24,6 +24,7 @@ Party::Party(Party &&party) : mId(party.mId), mName(party.mName), mMandates(part
 Party &Party::operator=(const Party &party) {
 
     if (&party != this) {
+        delete mJoinPolicy;
         mId = party.mId;
         mName = party.mName;
         mMandates = party.mMandates;
@@ -40,6 +41,7 @@ Party &Party::operator=(const Party &party) {
 Party &Party::operator=(Party &&party) {
 
     if (&party != this) {
+        delete mJoinPolicy;
         mId = party.mId;
         mName = party.mName;
         mMandates = party.mMandates;
@@ -64,6 +66,7 @@ Party::~Party() {
         delete mJoinPolicy;
         mJoinPolicy = nullptr;
     }
+
 }
 
 State Party::getState() const {
